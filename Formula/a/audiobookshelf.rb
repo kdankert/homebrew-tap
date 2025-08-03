@@ -1,8 +1,8 @@
 class Audiobookshelf < Formula
   desc "Self-hosted audiobook and podcast server"
   homepage "https://audiobookshelf.org"
-  url "https://github.com/advplyr/audiobookshelf/archive/refs/tags/v2.26.3.tar.gz"
-  sha256 "bae68fcefbad865ed096f2f29e4022ed20dde79eb496815d9fbd572be87ffb6b"
+  url "https://github.com/advplyr/audiobookshelf/archive/refs/tags/v2.27.0.tar.gz"
+  sha256 "8926ef45166c66c8b686c01a30408cb1a9dc02ef6a4465ef876f2702d3c4bb94"
   license "GPL-3.0-only"
 
   depends_on "ffmpeg"
