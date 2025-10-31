@@ -1,27 +1,26 @@
 class Texpresso < Formula
-  desc "TeXpresso: live rendering and error reporting for LaTeX"
+  desc "Live rendering and error reporting for LaTeX"
   homepage "https://github.com/let-def/texpresso"
-  head "https://github.com/let-def/texpresso.git", branch: "main"
   url "https://github.com/let-def/texpresso.git", tag: "v0.1"
   license "MIT"
+  head "https://github.com/let-def/texpresso.git", branch: "main"
+
+  depends_on "freetype" => :build
+  depends_on "glib" => :build
+  depends_on "graphite2" => :build
+  depends_on "harfbuzz" => :build
+  depends_on "icu4c" => :build
+  depends_on "libpng" => :build
+  depends_on "pkg-config" => :build
+  depends_on "mupdf-tools"
+  depends_on "rust"
+  depends_on "SDL2"
 
   patch :DATA
 
-  depends_on "rust"
-  depends_on "mupdf-tools"
-  depends_on "SDL2"
-  depends_on "pkg-config" => :build
-  depends_on "freetype" => :build
-  depends_on "icu4c" => :build
-  depends_on "libpng" => :build
-  depends_on "graphite2" => :build
-  depends_on "harfbuzz" => :build
-  depends_on "glib" => :build
-
   def install
-    system "make", "BREW=#{HOMEBREW_PREFIX}", "BREW_ICU4C=#{Formula['icu4c'].prefix}"
+    system "make", "BREW=#{HOMEBREW_PREFIX}", "BREW_ICU4C=#{Formula["icu4c"].prefix}"
     bin.install "build/texpresso", "build/texpresso-tonic"
-
   end
 end
 
